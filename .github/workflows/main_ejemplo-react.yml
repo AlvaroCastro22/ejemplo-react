@@ -40,6 +40,8 @@ jobs:
       contents: read #This is required for actions/checkout
 
     steps:
+      - name: List files after download
+        run: ls -R
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
@@ -58,7 +60,8 @@ jobs:
         with:
           app-name: 'ejemplo-react'
           slot-name: 'Production'
-          package: node-app/dist
+          package: dist
+
 
 
 
